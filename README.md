@@ -6,7 +6,7 @@
 ## Summary
 As OpenAQ looks to expand to pulling in Low Cost Sensor Data, the overaarching limitation is due to the large overall change in scale in the quantity of data. OpenAQ currently uses approaches with saving data on S3 to overcome these limitations, but use of Athena over S3 has limitations on the ability to create real time interactions with the API.
 
-![OpenAQ LCS Pilot Diagram](openac_lcspilot.png)
+![OpenAQ LCS Pilot Diagram](openaq_lcspilot.png)
 
 ## Database Updates
 The primary focus of this document is to revamp the database backend used by OpenAQ to accomplish three goals.
