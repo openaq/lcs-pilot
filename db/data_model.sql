@@ -25,6 +25,7 @@ that are colocated. This could be on a tower, a mobile platform, etc.
 CREATE TABLE IF NOT EXISTS stations  (
     station_id integer primary key generated always as identity,
     station_name text unique not null,
+    feed_id integer references feeds(feed_id),
     geog geography,
     mobile boolean default false,
     city text,

@@ -20,6 +20,8 @@ Currently OpenAQ data is stored in a very flat structure. The key recommendation
 
 Please see [here](db/datamodel.sql) for a recommended data model to accomodate incoming data.
 
+![Proposed Data Model](db/openaq_datamodel.png)
+
 #### Search and Explore
 By separating the metadata from the actual measurements, it becomes much more effective to search and explore the data holdings. Rather than needing to search through GB to TB worth of data, the metadata records generally require on the order of 10s of MB worth of data making any sort of search/filtering operations much simpler to develop.
 
