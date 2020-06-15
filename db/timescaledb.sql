@@ -19,7 +19,7 @@ ALTER TABLE measurements_mobile SET (
 CREATE VIEW measurements_stationary_daily
 WITH (timescaledb.continuous) AS
 SELECT
-    sensor_id,
+    sensor_configuration_id,
     time_bucket('1 day', ts) as hour,
     min(value),
     max(value),
@@ -27,10 +27,6 @@ SELECT
     avg(value)
 FROM
     measurements_stationary
-    JOIN
-    sensor_configurations
-    USING (sensor_configuration_id)
 GROUP BY
-    1,2
-ORDER BY 1,2
+    hour, sensor_configuration_id
 ;

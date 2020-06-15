@@ -14,11 +14,14 @@ SELECT
     false as mobile
 FROM
     measurements_stationary
-    JOIN sensors USING (sensor_id)
+    JOIN sensor_configurations USING (sensor_configuration_id)
     JOIN measurands USING (measurand_id)
+    JOIN sensor_platforms USING(sensor_platform_id)
     JOIN stations USING (station_id)
 ;
 
+/*
+Trigger  (needs to be updated for current version of the data model) that allows inserting records into the compatibility view as if it was the traditional flat OpenAQ data model
 
 CREATE OR REPLACE FUNCTION measurements_trigger_func() RETURNS trigger as $$
 DECLARE
@@ -106,3 +109,4 @@ CREATE TRIGGER measurements_insert
     INSTEAD OF INSERT ON measurements_view
     FOR EACH ROW
     EXECUTE PROCEDURE measurements_trigger_func();
+*/

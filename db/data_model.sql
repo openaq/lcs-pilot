@@ -62,7 +62,9 @@ CREATE TABLE IF NOT EXISTS sensor_configurations (
     sensor_metadata jsonb
 );
 
-
+/*
+The actual measurement tables. We keep these as light as possible including separating stationary (where the location is stored as part of the station) and mobile (which require an additional location stored for each reading) since this is the table which can have billions of records.
+*/
 CREATE TABLE measurements_stationary (
     sensor_configuration_id integer references sensor_configurations(sensor_configuration_id) not null,
     ts timestamptz not null,
