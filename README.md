@@ -18,7 +18,7 @@ The primary focus of this document is to revamp the database backend used by Ope
 
 Currently OpenAQ data is stored in a very flat structure. The key recommendation for updating the backend for this project is to normalize the database structure for stored measurements and metadata.
 
-Please see [here](db/datamodel.sql) for a recommended data model to accomodate incoming data.
+Please see [here](db/data_model.sql) for a recommended data model to accomodate incoming data.
 
 ![Proposed Data Model](db/openaq_datamodel.png)
 
